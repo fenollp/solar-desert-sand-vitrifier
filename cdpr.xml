@@ -36,6 +36,7 @@
 
         <body name="lens">
             <freejoint name="root"/>
+            <!-- <joint pos="0 0 2" type="ball" limited="true"/> -->
 
             <!-- 1.4/2=0.7 1.05/2=0.525 meters -->
             <!-- mass="3.5" kg -->
@@ -51,62 +52,52 @@
     </worldbody>
 
     <tendon>
-        <spatial name="Wt" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+        <spatial name="Wt" width="0.002" rgba=".95 .3 .3 1" limited="true" range="0 0.33">
             <site site="Wt"/>
+            <!-- <geom geom="lens"/> is not sphere or cylinder -->
             <site site="W"/>
         </spatial>
-        <spatial name="Wb" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+        <spatial name="Wb" width="0.002" rgba=".95 .3 .3 1" limited="true" range="0 0.33">
             <site site="Wb"/>
             <site site="W"/>
         </spatial>
 
-        <spatial name="Et" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+        <spatial name="Et" width="0.002" rgba=".95 .3 .3 1" limited="true" range="0 0.33">
             <site site="Et"/>
             <site site="E"/>
         </spatial>
-        <spatial name="Eb" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+        <spatial name="Eb" width="0.002" rgba=".95 .3 .3 1" limited="true" range="0 0.33">
             <site site="Eb"/>
             <site site="E"/>
         </spatial>
 
-        <spatial name="St" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+        <spatial name="St" width="0.002" rgba=".95 .3 .3 1" limited="true" range="0 0.33">
             <site site="St"/>
             <site site="S"/>
         </spatial>
-        <spatial name="Sb" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+        <spatial name="Sb" width="0.002" rgba=".95 .3 .3 1" limited="true" range="0 0.33">
             <site site="Sb"/>
             <site site="S"/>
         </spatial>
 
-        <spatial name="Nt" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+        <spatial name="Nt" width="0.002" rgba=".95 .3 .3 1" limited="true" range="0 0.33">
             <site site="Nt"/>
             <site site="N"/>
         </spatial>
-        <spatial name="Nb" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+        <spatial name="Nb" width="0.002" rgba=".95 .3 .3 1" limited="true" range="0 0.33">
             <site site="Nb"/>
             <site site="N"/>
         </spatial>
     </tendon>
 
     <actuator>
-        <motor name="Wt" tendon="Wt" gear="100000"/> <!-- 0.16 -->
-        <motor name="Wb" tendon="Wb" gear="100000"/> <!-- 0.22 -->
-        <motor name="Et" tendon="Et" gear="100000"/> <!-- -0.15 -->
-        <motor name="Eb" tendon="Eb" gear="100000"/> <!-- -0.52 -->
-        <motor name="St" tendon="St" gear="100000"/> <!-- -0.59 -->
-        <motor name="Sb" tendon="Sb" gear="100000"/> <!-- 0 -->
-        <motor name="Nt" tendon="Nt" gear="100000"/> <!-- 0.14 -->
-        <motor name="Nb" tendon="Nb" gear="100000"/> <!-- -0.4 -->
-
-        <!-- https://github.com/deepmind/mujoco/issues/84#issuecomment-986054248 -->
-        <!-- https://roboti.us/forum/index.php?threads/simple-position-servo.3389/ -->
-        <!-- <position name="Wt" tendon="Wt" gear="1" kp="100"/> -->
-        <!-- <position name="Wb" tendon="Wb" gear="1" kp="100"/> -->
-        <!-- <position name="Et" tendon="Et" gear="1" kp="100"/> -->
-        <!-- <position name="Eb" tendon="Eb" gear="1" kp="100"/> -->
-        <!-- <position name="St" tendon="St" gear="1" kp="100"/> -->
-        <!-- <position name="Sb" tendon="Sb" gear="1" kp="100"/> -->
-        <!-- <position name="Nt" tendon="Nt" gear="1" kp="100"/> -->
-        <!-- <position name="Nb" tendon="Nb" gear="1" kp="100"/> -->
+        <motor name="Wt" tendon="Wt" gear="10"/>
+        <motor name="Wb" tendon="Wb" gear="10"/>
+        <motor name="Et" tendon="Et" gear="10"/>
+        <motor name="Eb" tendon="Eb" gear="10"/>
+        <motor name="St" tendon="St" gear="10"/>
+        <motor name="Sb" tendon="Sb" gear="10"/>
+        <motor name="Nt" tendon="Nt" gear="10"/>
+        <motor name="Nb" tendon="Nb" gear="10"/>
     </actuator>
 </mujoco>
