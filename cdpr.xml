@@ -18,20 +18,20 @@
         <!-- 3 by 3 square, 2 tall -->
         <body name="frame">
             <geom class="pole" name="pole_west"  fromto="-1.5 0 0  -1.5 0 2"/>
-            <site name="Wt" pos="-1.5 0 2"/>
-            <site name="Wb" pos="-1.5 0 0"/>
+            <site name="W+" pos="-1.5 0 2"/>
+            <site name="W-" pos="-1.5 0 0"/>
 
             <geom class="pole" name="pole_east"  fromto="+1.5 0 0  +1.5 0 2"/>
-            <site name="Et" pos="+1.5 0 2"/>
-            <site name="Eb" pos="+1.5 0 0"/>
+            <site name="E+" pos="+1.5 0 2"/>
+            <site name="E-" pos="+1.5 0 0"/>
 
             <geom class="pole" name="pole_south" fromto="0 -1.5 0  0 -1.5 2"/>
-            <site name="St" pos="0 -1.5 2"/>
-            <site name="Sb" pos="0 -1.5 0"/>
+            <site name="S+" pos="0 -1.5 2"/>
+            <site name="S-" pos="0 -1.5 0"/>
 
             <geom class="pole" name="pole_north" fromto="0 +1.5 0  0 +1.5 2"/>
-            <site name="Nt" pos="0 +1.5 2"/>
-            <site name="Nb" pos="0 +1.5 0"/>
+            <site name="N+" pos="0 +1.5 2"/>
+            <site name="N-" pos="0 +1.5 0"/>
         </body>
 
         <body name="lens">
@@ -51,64 +51,65 @@
     </worldbody>
 
     <tendon>
-        <spatial name="Wt" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
-            <site site="Wt"/>
+        <!-- a pole's 2 cables are attached to diagonally opposed lens corners -->
+        <spatial name="W+" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+            <site site="W+"/>
             <site site="W"/>
         </spatial>
-        <spatial name="Wb" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
-            <site site="Wb"/>
+        <spatial name="W-" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+            <site site="W-"/>
             <site site="W"/>
         </spatial>
 
-        <spatial name="Et" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
-            <site site="Et"/>
+        <spatial name="E+" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+            <site site="E+"/>
             <site site="E"/>
         </spatial>
-        <spatial name="Eb" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
-            <site site="Eb"/>
+        <spatial name="E-" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+            <site site="E-"/>
             <site site="E"/>
         </spatial>
 
-        <spatial name="St" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
-            <site site="St"/>
+        <spatial name="S+" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+            <site site="S+"/>
             <site site="S"/>
         </spatial>
-        <spatial name="Sb" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
-            <site site="Sb"/>
+        <spatial name="S-" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+            <site site="S-"/>
             <site site="S"/>
         </spatial>
 
-        <spatial name="Nt" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
-            <site site="Nt"/>
+        <spatial name="N+" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+            <site site="N+"/>
             <site site="N"/>
         </spatial>
-        <spatial name="Nb" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
-            <site site="Nb"/>
+        <spatial name="N-" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
+            <site site="N-"/>
             <site site="N"/>
         </spatial>
     </tendon>
 
     <actuator>
-        <motor name="Wt" tendon="Wt" gear="100000"/> <!-- 0.16 -->
-        <motor name="Wb" tendon="Wb" gear="100000"/> <!-- 0.22 -->
-        <motor name="Et" tendon="Et" gear="100000"/> <!-- -0.15 -->
-        <motor name="Eb" tendon="Eb" gear="100000"/> <!-- -0.52 -->
-        <motor name="St" tendon="St" gear="100000"/> <!-- -0.59 -->
-        <motor name="Sb" tendon="Sb" gear="100000"/> <!-- 0 -->
-        <motor name="Nt" tendon="Nt" gear="100000"/> <!-- 0.14 -->
-        <motor name="Nb" tendon="Nb" gear="100000"/> <!-- -0.4 -->
+        <motor name="W+" tendon="W+" gear="100000"/> <!-- 0.16 -->
+        <motor name="W-" tendon="W-" gear="100000"/> <!-- 0.22 -->
+        <motor name="E+" tendon="E+" gear="100000"/> <!-- -0.15 -->
+        <motor name="E-" tendon="E-" gear="100000"/> <!-- -0.52 -->
+        <motor name="S+" tendon="S+" gear="100000"/> <!-- -0.59 -->
+        <motor name="S-" tendon="S-" gear="100000"/> <!-- 0 -->
+        <motor name="N+" tendon="N+" gear="100000"/> <!-- 0.14 -->
+        <motor name="N-" tendon="N-" gear="100000"/> <!-- -0.4 -->
 
         <!-- https://github.com/deepmind/mujoco/discussions/74 -->
 
         <!-- https://github.com/deepmind/mujoco/issues/84#issuecomment-986054248 -->
         <!-- https://roboti.us/forum/index.php?threads/simple-position-servo.3389/ -->
-        <!-- <position name="Wt" tendon="Wt" gear="1" kp="100"/> -->
-        <!-- <position name="Wb" tendon="Wb" gear="1" kp="100"/> -->
-        <!-- <position name="Et" tendon="Et" gear="1" kp="100"/> -->
-        <!-- <position name="Eb" tendon="Eb" gear="1" kp="100"/> -->
-        <!-- <position name="St" tendon="St" gear="1" kp="100"/> -->
-        <!-- <position name="Sb" tendon="Sb" gear="1" kp="100"/> -->
-        <!-- <position name="Nt" tendon="Nt" gear="1" kp="100"/> -->
-        <!-- <position name="Nb" tendon="Nb" gear="1" kp="100"/> -->
+        <!-- <position name="W+" tendon="W+" gear="1" kp="100"/> -->
+        <!-- <position name="W-" tendon="W-" gear="1" kp="100"/> -->
+        <!-- <position name="E+" tendon="E+" gear="1" kp="100"/> -->
+        <!-- <position name="E-" tendon="E-" gear="1" kp="100"/> -->
+        <!-- <position name="S+" tendon="S+" gear="1" kp="100"/> -->
+        <!-- <position name="S-" tendon="S-" gear="1" kp="100"/> -->
+        <!-- <position name="N+" tendon="N+" gear="1" kp="100"/> -->
+        <!-- <position name="N-" tendon="N-" gear="1" kp="100"/> -->
     </actuator>
 </mujoco>
