@@ -58,7 +58,7 @@
         </spatial>
         <spatial name="W-" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
             <site site="W-"/>
-            <site site="W"/>
+            <site site="E"/>
         </spatial>
 
         <spatial name="E+" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
@@ -67,7 +67,7 @@
         </spatial>
         <spatial name="E-" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
             <site site="E-"/>
-            <site site="E"/>
+            <site site="W"/>
         </spatial>
 
         <spatial name="S+" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
@@ -76,7 +76,7 @@
         </spatial>
         <spatial name="S-" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
             <site site="S-"/>
-            <site site="S"/>
+            <site site="N"/>
         </spatial>
 
         <spatial name="N+" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
@@ -85,7 +85,7 @@
         </spatial>
         <spatial name="N-" width="0.002" rgba="1 0 0 1" limited="true" range="0 0.33">
             <site site="N-"/>
-            <site site="N"/>
+            <site site="S"/>
         </spatial>
     </tendon>
 
